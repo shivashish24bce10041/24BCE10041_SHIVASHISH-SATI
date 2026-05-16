@@ -1,0 +1,87 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20840\viewh14280\viewkind0
+\pard\tx220\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f0\fs24 \cf0 {\listtext	1.	}-- checking all databases present in mysql\
+{\listtext	2.	}show databases;\
+{\listtext	3.	}\
+{\listtext	4.	}-- creating a new database\
+{\listtext	5.	}create database vitcampus;\
+{\listtext	6.	}\
+{\listtext	7.	}-- deleting the database\
+{\listtext	8.	}\
+{\listtext	9.	}drop database vitcampus;\
+{\listtext	10.	}\
+{\listtext	11.	}\
+{\listtext	12.	}-- selecting the database to work on\
+{\listtext	13.	}use vitcampus;\
+{\listtext	14.	}\
+{\listtext	15.	}\
+{\listtext	16.	}\
+{\listtext	17.	}\
+{\listtext	18.	}-- creating cse table\
+{\listtext	19.	}\
+{\listtext	20.	}\
+{\listtext	21.	}create table cse(\
+{\listtext	22.	}\
+{\listtext	23.	}-- student id\
+{\listtext	24.	}sid int(8),\
+{\listtext	25.	}\
+{\listtext	26.	}-- student name\
+{\listtext	27.	}sname varchar(50),\
+{\listtext	28.	}\
+{\listtext	29.	}-- student marks\
+{\listtext	30.	}smarks int(3)\
+{\listtext	31.	}\
+{\listtext	32.	});\
+{\listtext	33.	}\
+{\listtext	34.	}-- showing all tables inside vitcampus database\
+{\listtext	35.	}show tables from vitcampus;\
+{\listtext	36.	}\
+{\listtext	37.	}-- displaying all records from cse table\
+{\listtext	38.	}select * from cse;\
+{\listtext	39.	}\
+{\listtext	40.	}-- inserting student records into cse table\
+{\listtext	41.	}insert into cse value (101,'Simon',80);\
+{\listtext	42.	}insert into cse value (102,'Sakshi',70);\
+{\listtext	43.	}insert into cse value (103,'Sumit',52);\
+{\listtext	44.	}insert into cse value (104,'Sam',61);\
+{\listtext	45.	}insert into cse value (104,'Harry',90);\
+{\listtext	46.	}\
+{\listtext	47.	}\
+{\listtext	48.	}\
+{\listtext	49.	}create table eee(\
+{\listtext	50.	}sid int(8),\
+{\listtext	51.	}sname varchar(50),\
+{\listtext	52.	}projectmarks int(3)\
+{\listtext	53.	}\
+{\listtext	54.	});\
+{\listtext	55.	}\
+{\listtext	56.	}select * from eee;\
+{\listtext	57.	}\
+{\listtext	58.	}insert into eee value (101,'Simon',80);\
+{\listtext	59.	}insert into eee value (102,'Sikshi',75);\
+{\listtext	60.	}insert into eee value (103,'Sukhi',59);\
+{\listtext	61.	}insert into eee value (104,'Samul',69);\
+{\listtext	62.	}insert into eee value (104,'Hanry',98);\
+{\listtext	63.	}\
+{\listtext	64.	}\
+{\listtext	65.	}\
+{\listtext	66.	}create table grades(\
+{\listtext	67.	}sid int(8),\
+{\listtext	68.	}sname varchar(50),\
+{\listtext	69.	}grades varchar(3)\
+{\listtext	70.	}\
+{\listtext	71.	});\
+{\listtext	72.	}select*from grades;\
+{\listtext	73.	}\
+{\listtext	74.	}insert into grades value (101,'Simon','A');\
+{\listtext	75.	}insert into grades value (102,'Sikshi','B');\
+{\listtext	76.	}insert into grades value (103,'Sukhi','C');\
+{\listtext	77.	}insert into grades value (104,'Samul','D');\
+{\listtext	78.	}insert into grades value (104,'Hanry','S');}
