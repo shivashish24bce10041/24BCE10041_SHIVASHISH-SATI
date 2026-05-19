@@ -1,0 +1,133 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20280\viewh16340\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\fs26 \cf0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 select first_name,department from worker\
+where department='Admin';\
+\
+select*from worker;\
+\
+\
+-- IN keyword operator \
+\
+select first_name,department from worker\
+where worker_id in (1,6,7);\
+\
+select first_name,department from worker\
+where worker_id not in (1,6,7);\
+\
+-- Between operator\
+\
+select*from worker \
+where salary between 110000 and 300000;\
+\
+select*from worker \
+where salary not between 110000 and 300000;\
+\
+\
+select*from worker \
+where salary between 100000 and 500000\
+and department not in ('hr','admin');\
+\
+select *from worker\
+where department= 'admin' \
+and last_name ='sati' \
+and salary = 15000\
+and worker_id not in (9,10);\
+\
+\
+\
+-- Like operator used to make a connection with is similer to some parameter and not the exact thing there are two elements in it ( : and % )\
+\
+select*from worker where first_name like 'V%e_';\
+select*from worker where first_name like '_i__%';\
+select*from worker where first_name like '_i__a%';\
+\
+\
+select*from worker where first_name like '_o%_';\
+select*from worker where last_name like '_i%';\
+select*from worker where first_name like '_i_h%';\
+\
+-- min() , max() , count () , avg() \
+\
+select*from worker;\
+select max(salary) from worker where department= 'hr' ;\
+select min(salary) from worker where department= 'hr' ;\
+select count(worker_id) from worker where department= 'hr' ;\
+select sum(salary) from worker where department= 'admin' ;\
+select avg(salary) from worker where department= 'admin' ;\
+select avg(salary) from worker where department= 'admin' ;\
+\
+\
+\
+-- question - > where select the worker from the department (admin) whose salary is minimum and his name does not contain letter a in it \
+select*from worker where department = 'admin' \
+and first_name not like  '%a%'\
+and salary = (select min(salary)from worker where department = 'admin');\
+\
+\
+\
+\
+select*from worker where department = 'admin' \
+and first_name not like  '%a%';\
+\
+\
+\
+\
+-- UNION operator   and UNION ALL \
+\
+SELECT salary FROM worker\
+UNION\
+SELECT salary FROM worker;\
+\
+\
+SELECT salary FROM worker\
+UNION ALL\
+SELECT salary FROM worker;\
+\
+\
+\
+select*from worker ;\
+select worker_id as rollnumber from worker ;   -- as give temperory name to given parameter \
+\
+\
+select distinct(department)from worker ;  -- distinct print out unique value fro the class that has been selected \
+\
+\
+\
+-- CASE STATEMENT  :-- it is kind of switch it goes through the condition when when the condition is met it prints\
+\
+\
+SELECT worker_id, first_name,\
+CASE\
+    WHEN salary > 300000 THEN 'Rich people'\
+    WHEN salary >= 100000 and salary <299999 THEN 'Middle'\
+    ELSE 'Poor'\
+    END \
+AS Status\
+FROM worker;\
+\
+\
+-- VIEW  :-- it work as a plugin and can we called from any where and it will show the result\
+\
+\
+select min(salary) from worker where department='admin';\
+select max(salary) from worker where department='admin';\
+\
+create view minSalaryAdmin as select min(salary) from worker where department='admin';\
+\
+create view maxSalaryAdmin as select max(salary) from worker where department='admin';\
+\
+select * from maxsalaryadmin;\
+select * from minsalaryadmin;\
+\
+}
