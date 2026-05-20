@@ -1,0 +1,245 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21340\viewh16100\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 -- SQL Constrains \
+\
+--  # to prevent dublicate value in the table  we use "unique" constrain \
+-- "Default" constrins fills a pre decided value in the table cell if it contain null value \
+-- "check" constrain it can be used to put a filter as we want to use \
+-- "keys "  1) Primary key and 2) foreign key \
+\
+\
+\
+-- not null \
+use vitcampus;\
+create table person (\
+ID int not null,\
+Last_name varchar(50)unique not null,\
+First_name varchar(50)not null,\
+age int);\
+\
+desc person;\
+\
+-- Ading a constraint in the table after the table has been created \
+ALTER TABLE person \
+add unique (age);\
+\
+desc person;\
+\
+\
+-- Removing a constraint from a table element \
+\
+ALTER TABLE person\
+DROP CONSTRAINT age;\
+\
+desc person;\
+\
+alter table person\
+MODIFY age INT NOT NULL;\
+\
+--  check constraint \
+\
+ use vitcampus;\
+create table persons (\
+ID int not null,\
+Last_name varchar(50)unique not null,\
+First_name varchar(50)not null,\
+age int\
+check (age >=18));\
+\
+INSERT INTO persons VALUES (1, 'Sharma', 'Rahul', 2);  -- as age is less than 18 the code will not run \
+INSERT INTO persons VALUES (1, 'Sharma', 'cahul', 20); \
+\
+\
+-- you can also add check constrain to an element after the the table is cerated \
+\
+ALTER TABLE Persons	\
+ADD CHECK (Age<=25);\
+\
+INSERT INTO persons VALUES (1, 'Sharma', 'cahul', 26); -- agin it dont run as the age is greater than 25 \
+INSERT INTO persons VALUES (1, 'gharma', 'bahul', 25);\
+\
+--  personal practice \
+\
+USE vitcampus;\
+\
+CREATE TABLE employees (\
+Emp_ID INT NOT NULL,\
+Last_Name VARCHAR(50) UNIQUE NOT NULL,\
+First_Name VARCHAR(50) NOT NULL,\
+salary INT,\
+CHECK (salary >= 30000)\
+);\
+\
+\
+INSERT INTO employees VALUES (1, 'Kumar', 'Rohan', 20000); -- as salary is less than 30000 the code will not run\
+\
+INSERT INTO employees VALUES (1, 'Kumar', 'Mohan', 40000);-- this will run successfully\
+\
+ALTER TABLE employees\
+ADD CHECK (salary <= 80000); -- adding another CHECK constraint after table creation\
+\
+INSERT INTO employees VALUES (2, 'Verma', 'Sohan', 90000);-- again this will not run because salary is greater than 80000\
+\
+INSERT INTO employees VALUES (3, 'Singh', 'Aman', 75000);-- this will run successfully\
+\
+\
+\
+\
+-- Default constrains :--  fills a pre decided value in the table cell if it contain null value \
+																								\
+\
+CREATE TABLE bank (\
+Emp_ID INT NOT NULL,\
+Last_Name VARCHAR(50) UNIQUE NOT NULL,\
+First_Name VARCHAR(50) NOT NULL,\
+department varchar (20) default 'Joinee'\
+\
+);\
+\
+desc bank;\
+\
+\
+\
+--  Primary  keys \
+\
+CREATE TABLE product (\
+product_ID  int primary key ,\
+product_Name VARCHAR(50) UNIQUE NOT NULL,\
+First_Name VARCHAR(50) NOT NULL\
+\
+);\
+\
+insert into product value (1010 ,'soap','sanjay ');\
+insert into product value (1011 ,'powder','sunil');\
+insert into product value (1012 ,'shampoo','saksham ');\
+\
+Alter table product     -- this is to add primary key to a table after it is created\
+add primary key (first_name) ;\
+\
+Alter table product     -- this is to remove primary key to a table after it is created and you dont need to specify the name of the key as there is only one primary key in the table \
+drop primary key  ;\
+\
+desc product;\
+\
+--  FOREIGN KEY  \
+\
+use vitcampus;\
+CREATE TABLE Persons (\
+    ID int NOT NULL,\
+    LastName varchar(255) unique not null,\
+    FirstName varchar(255) NOT NULL,\
+    Age int\
+);\
+desc persons;\
+\
+insert into persons values (101,'V','Jayanth',null);\
+select * from persons;\
+\
+ALTER TABLE Persons\
+ADD UNIQUE (AGE);\
+\
+ALTER TABLE Persons\
+DROP CONSTRAINT Age;\
+\
+drop table persons;\
+CREATE TABLE Persons (\
+  \
+    Age int not null,\
+    CHECK (Age>=18 and age <=23)\
+);\
+\
+insert into persons values (21);\
+\
+\
+CREATE TABLE Persons1 (\
+    ID int NOT NULL,\
+    LastName varchar(255) NOT NULL,\
+    FirstName varchar(255),\
+    Age int,\
+    City varchar(255) DEFAULT 'Coimbatore'\
+);\
+\
+desc persons1;\
+\
+create table products(\
+pid int primary key,\
+pname varchar(100) not null,\
+prefNo int not null unique\
+);\
+\
+desc products;\
+\
+insert into products values (102,"furniture",19930);\
+select * from products;\
+\
+ALTER TABLE Persons\
+ADD PRIMARY KEY (ID);\
+\
+ALTER TABLE Persons\
+DROP PRIMARY KEY;\
+drop table products;\
+create table category(\
+cid int primary key,\
+cname varchar(100) not null\
+);\
+\
+insert into category values (101,'electronics'),(102,'Home App');\
+\
+select * from category;\
+drop table products;\
+CREATE TABLE products (\
+    pid int primary key,\
+    pname varchar(100) NOT NULL,\
+    cid int, \
+    FOREIGN KEY (cid) REFERENCES category(cid)\
+);\
+desc products;\
+\
+delete from category where cid=101;\
+update \
+\
+insert into products values (504,'Power Bank Samsung',101);\
+\
+select * from products;\
+\
+\
+\
+--  practice \
+\
+use vitcampus;\
+\
+-- Parent Table\
+create table  table1 (\
+    Category_ID int primary key,\
+    Category_Name varchar(50) not null\
+);\
+\
+\
+-- Child Table\
+create table table2 (\
+    Product_ID int primary key,\
+    Product_Name varchar(50) not null,\
+    Category_ID INT,\
+    \
+    foreign key (Category_ID) references table1(Category_ID)\
+);\
+\
+-- Inserting values into parent table\
+insert into table1 values(1, 'Electronics'),(2, 'Clothing'),(3, 'Books');\
+\
+-- Inserting values into child table\
+insert into table2 values\
+(101, 'Laptop', 1),\
+(102, 'T-Shirt', 2),\
+(103, 'Novel', 3),\
+(104, 'Mobile', 1);\
+\
+-- Display tables\
+select* from table1;\
+select* from  table2;}
