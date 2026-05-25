@@ -1,0 +1,138 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- 2.Retrieve the Project Name, Client Name, and the Total Hours Worked on that project, but only for projects managed by the 'Consulting' department. ~\
+\
+\
+select p.project_name, p.client_name,sum(a.hours_worked) as total_hours\
+from Projects p\
+join Departments d on p.dept_id = d.dept_id\
+join Assignments a on p.project_id = a.project_id\
+where d.dept_name = 'Consulting'\
+group by p.project_name, p.client_name;\
+\
+--  3.Find the names of Employees who have worked on a project with Client Name 'GlobalTech Solutions'. List the Employee Name and Project Name.\
+\
+select e.employee_name,p.project_name from Employees e join Assignments a on e.employee_id = a.employee_id\
+join Projects p on a.project_id = p.project_id where p.client_name = 'GlobalTech Solutions';\
+\
+-- 4.List all Departments that have no Employees currently assigned to them.~\
+\
+select d.dept_name from Departments d left \
+join Employees e on d.dept_id = e.dept_id where e.employee_id ;\
+\
+\
+-- 5.Show the Manager Name, the Department Name they manage, and the total number of direct reports they have.Aggregation and Grouping ~\
+\
+select m.employee_name as manager_name,d.dept_name,count(e.employee_id) as total_reports\
+from Employees e join Employees m on e.manager_id = m.employee_id\
+join Departments d on m.dept_id = d.dept_id group by  m.employee_name, d.dept_name;\
+\
+-- 6.Calculate the Average Hours Worked per Employee across all projects. List the Employee Name and the average hours.\
+\
+select e.employee_name, avg(a.hours_worked) AS average_hours from Employees e\
+join Assignments a on e.employee_id = a.employee_id group by  e.employee_name;\
+\
+\
+-- 11.Find the Employee Name(s) who work on ALL projects managed by the 'R&D' department. ~\
+\
+select e.employee_name from Employees e join Assignments a on e.employee_id = a.employee_id join Projects p on a.project_id = p.project_id \
+join Departments d on p.dept_id = d.dept_id\
+where d.dept_name = 'R&D' group by  e.employee_name having count(distinct p.project_id) =\
+( select count(*) from Projects p2 join Departments d2 on p2.dept_id = d2.dept_id d2.dept_name = 'R&D'\
+);\
+\
+-- 18 .Use the MySQL-specific IFNULL function to list all Employee Names. If an employee has no manager, display "CEO" instead of NULL.\
+\
+select employee_name,IFNULL(CAST(manager_id AS CHAR), 'CEO') as manager\
+from Employees;\
+\
+\
+-- 19.Find the top 3 Departments based on the total hours worked by all their employees across all projects.\
+\
+\
+select d.dept_name, sum(a.hours_worked) AS total_hours from Departments d\
+join Employees e on d.dept_id = e.dept_id\
+join Assignments a on e.employee_id = a.employee_id group by d.dept_name order by total_hours desc limit 3;\
+\
+-- 20.Display the Project Name and a status ("High Activity" if total hours > 300, "Normal" otherwise) using the CASE statement.Complex Scenarios and Performance\
+\
+select p.project_name, case when sum(a.hours_worked) > 300 then 'High Activity' else 'Normal' END AS status\
+from Projects p left join Assignments a on p.project_id = a.project_id group by p.project_name;\
+\
+\
+-- 22.Write a query using a Common Table Expression (CTE) to find the Project Name and the number of unique employees assigned to it.\
+\
+with ProjectEmployees AS\
+(\
+    select p.project_name,count(distinct a.employee_id) AS unique_employees\
+    from Projects p left join Assignments a on p.project_id = a.project_id group by  p.project_name\
+)\
+\
+select *\
+from ProjectEmployees;\
+\
+\
+-- 23.Find the Employee Name(s) who are assigned to the same projects as Employee ID 101.\
+\
+select distinct e.employee_name from Employees e join Assignments a on e.employee_id = a.employee_id where a.project_id in\
+(\
+    select project_id from Assignments where  employee_id = 101\
+)\
+and e.employee_id <> 101;\
+\
+\
+-- 4.[HAVING] Display departments that have more than 2 employees and an average salary above 70,000. ~\
+\
+select d.dept_name, count(e.employee_id) as total_employees, avg(e.salary) as average_salary from Departments d\
+join Employees e on d.dept_id = e.dept_id\
+group by  d.dept_name having count(e.employee_id) > 2 and avg(e.salary) > 70000;\
+\
+\
+-- 7.[JOINS + WHERE] Find all Developers working in the 'San Francisco' location.~\
+\
+select e.name, j.job_title, d.location\
+from Employees e join Jobs j on e.job_id = j.job_id join Departments d\
+on e.dept_id = d.dept_id where j.job_title = 'Developer' and d.location = 'San Francisco';\
+\
+\
+\
+-- 11.[MULTI-TABLE JOIN] Show all department names even if they have no employees assigned to them. ~\
+\
+select d.dept_name, e.name from Departments d\
+left join Employees e on d.dept_id = e.dept_id;\
+\
+-- 13.[CORRELATED SUBQUERY] Find employees who earn more than the average salary of their own department.\
+\
+select e1.name,e1.salary\
+from Employees e1\
+where e1.salary >\
+( select avg(e2.salary) from Employees e2 where e1.dept_id = e2.dept_id );\
+\
+\
+\
+-- 16.[SUBQUERY] List departments that do not have any 'Analysts'. ~\
+\
+select dept_name\
+from Departments\
+where dept_id not in \
+( select e.dept_id from Employees e join Jobs j on e.job_id = j.job_id where j.job_title = 'Analyst' );\
+\
+-- 18.[JOIN + ORDER BY] Display employee names and hire dates, sorted by department name (A-Z) and then by salary (High to Low).\
+\
+select e.name, e.hire_date,d.dept_name,e.salary from Employees e\
+join Departments d on e.dept_id = d.dept_id order by d.dept_name asc, e.salary desc;\
+\
+\
+-- 23.[MATH + GROUP BY] Calculate the 10% bonus amount for each employee and show the total bonus per department.\
+\
+select d.dept_name, sum(e.salary * 0.10) AS total_bonus from Employees e\
+join Departments d on e.dept_id = d.dept_id group by d.dept_name;\
+\
+\
+\
+}
