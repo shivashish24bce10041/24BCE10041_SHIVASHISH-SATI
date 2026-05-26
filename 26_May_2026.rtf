@@ -1,0 +1,852 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset0 Menlo-Regular;\f2\fmodern\fcharset0 Courier;
+\f3\froman\fcharset0 Times-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red247\green250\blue248;\red248\green250\blue247;
+\red247\green250\blue247;\red43\green184\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c97616\c98401\c97763;\cssrgb\c97681\c98465\c97582;
+\cssrgb\c97600\c98384\c97624;\cssrgb\c18143\c77490\c100000;\cssrgb\c100000\c100000\c99971;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww20200\viewh14300\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 use vitcampus\
+\
+already on db vitcampus\
+\
+show dbs\
+\
+admin      40.00 KiB\
+config     72.00 KiB\
+local      40.00 KiB\
+vitcampus  80.00 KiB\
+\
+db.Employee.find().pretty()\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf2 \strokec3 \
+\strokec4 \{\
+  _id: ObjectId('6a1458f6de658045055146e0'),\
+  name: 'Tamil',\
+  mark: 90,\
+  location: 'chennai'\
+\}\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec5 \
+\
+\{\
+  _id: ObjectId('6a1459c7de658045055146e1'),\
+  name: 'Jayant',\
+  department: 'ECE'\
+\}\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.books.insertOne(\{title: 'MongoDB insertOne', isbn: '0-7617-6154-3' \});\
+\
+
+\f1\fs26 \strokec4 \{\
+  acknowledged: true,\
+  insertedId: ObjectId('6a159861fd05f1528a6a7d6a')\
+\}\
+\strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.books. insertMany([\
+\{ title: "NoSQL Distilled", isbn: "0-4696-7030-4"\}, \{ title: "NoSQL in 7 Days", isbn: "0-4086-6859-8"\}, \{ title: "NoSQL Database", isbn: "0-2504-6932-4"\},\
+]);\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf2 \strokec5 \{\
+  acknowledged: true,\
+  insertedIds: \{\
+    '0': ObjectId('6a1598aefd05f1528a6a7d6b'),\
+    '1': ObjectId('6a1598aefd05f1528a6a7d6c'),\
+    '2': ObjectId('6a1598aefd05f1528a6a7d6d')\
+  \}\
+\}\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec5 db.products.insertMany([\
+    \{ "_id" : 1, "name" : "xPhone", "price" : 799, "releaseDate": ISODate("2011-05-14"), "spec" : \{ "ram" : 4, "screen" : 6.5, "cpu" : 2.66 \},"color":["white","black"],"storage":[64,128,256]\},\
+    \{ "_id" : 2, "name" : "xTablet", "price" : 899, "releaseDate": ISODate("2011-09-01") , "spec" : \{ "ram" : 16, "screen" : 9.5, "cpu" : 3.66 \},"color":["white","black","purple"],"storage":[128,256,512]\},\
+    \{ "_id" : 3, "name" : "SmartTablet", "price" : 899, "releaseDate": ISODate("2015-01-14"), "spec" : \{ "ram" : 12, "screen" : 9.7, "cpu" : 3.66 \},"color":["blue"],"storage":[16,64,128]\},\
+    \{ "_id" : 4, "name" : "SmartPad", "price" : 699, "releaseDate": ISODate("2020-05-14"),"spec" : \{ "ram" : 8, "screen" : 9.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256,1024]\},\
+    \{ "_id" : 5, "name" : "SmartPhone", "price" : 599,"releaseDate": ISODate("2022-09-14"), "spec" : \{ "ram" : 4, "screen" : 5.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256]\}\
+ ])\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \
+\
+\{\
+  acknowledged: true,\
+  insertedIds: \{\
+    '0': 1,\
+    '1': 2,\
+    '2': 3,\
+    '3': 4,\
+    '4': 5\
+  \}\
+\}\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec5 db.products.find()\strokec3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec5 \
+\
+\{\
+  _id: 1,\
+  name: 'xPhone',\
+  price: 799,\
+  releaseDate: 2011-05-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 4,\
+    screen: 6.5,\
+    cpu: 2.66\
+  \},\
+  color: [\
+    'white',\
+    'black'\
+  ],\
+  storage: [\
+    64,\
+    128,\
+    256\
+  ]\
+\}\
+\
+\
+\{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899,\
+  releaseDate: 2011-09-01T00:00:00.000Z,\
+  spec: \{\
+    ram: 16,\
+    screen: 9.5,\
+    cpu: 3.66\
+  \},\
+  color: [\
+    'white',\
+    'black',\
+    'purple'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    512\
+  ]\
+\}\
+\{\
+  _id: 3,\
+  name: 'SmartTablet',\
+  price: 899,\
+  releaseDate: 2015-01-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 12,\
+    screen: 9.7,\
+    cpu: 3.66\
+  \},\
+  color: [\
+    'blue'\
+  ],\
+  storage: [\
+    16,\
+    64,\
+    128\
+  ]\
+\}\
+\{\
+  _id: 4,\
+  name: 'SmartPad',\
+  price: 699,\
+  releaseDate: 2020-05-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 8,\
+    screen: 9.7,\
+    cpu: 1.66\
+  \},\
+  color: [\
+    'white',\
+    'orange',\
+    'gold',\
+    'gray'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    1024\
+  ]\
+\}\
+\{\
+  _id: 5,\
+  name: 'SmartPhone',\
+  price: 599,\
+  releaseDate: 2022-09-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 4,\
+    screen: 5.7,\
+    cpu: 1.66\
+  \},\
+  color: [\
+    'white',\
+    'orange',\
+    'gold',\
+    'gray'\
+  ],\
+  storage: [\
+    128,\
+    256\
+  ]\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec5 db.products.findOne(\{_id: 5\}, \{name: 0\})\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\
+\{\
+  _id: 5,\
+  price: 599,\
+  releaseDate: 2022-09-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 4,\
+    screen: 5.7,\
+    cpu: 1.66\
+  \},\
+  color: [\
+    'white',\
+    'orange',\
+    'gold',\
+    'gray'\
+  ],\
+  storage: [\
+    128,\
+    256\
+  ]\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.findOne(\{_id: 5\},\{name:1\})\
+\
+
+\f1\fs26 \strokec5 \{\
+  _id: 5,\
+  name: 'SmartPhone'\
+\}\
+\strokec3 \
+
+\f0\fs24 \strokec2 db.products.findOne(\{_id: 5\},\{name:1 , _id:0\})\
+\
+
+\f1\fs26 \strokec5 \{\
+  name: 'SmartPhone'\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec5 // above code only give value of name as the name is set to 1 and _id is set to 0 and we have to get the value from\
+//id 5\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.drop()\
+\
+
+\f1\fs26 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec6 true\strokec3 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 \
+db.products.insertMany([\
+    \{ "_id" : 1, "name" : "xPhone", "price" : 799, "releaseDate": ISODate("2011-05-14"), "spec" : \{ "ram" : 4, "screen" : 6.5, "cpu" : 2.66 \},"color":["white","black"],"storage":[64,128,256],"inventory":[\{ qty: 1200,"warehouse": "San Jose"\}]\},\
+    \{ "_id" : 2, "name" : "xTablet", "price" : 899, "releaseDate": ISODate("2011-09-01") , "spec" : \{ "ram" : 16, "screen" : 9.5, "cpu" : 3.66 \},"color":["white","black","purple"],"storage":[128,256,512],"inventory":[\{ qty: 300,"warehouse": "San Francisco"\}]\},\
+    \{ "_id" : 3, "name" : "SmartTablet", "price" : 899, "releaseDate": ISODate("2015-01-14"), "spec" : \{ "ram" : 12, "screen" : 9.7, "cpu" : 3.66 \},"color":["blue"],"storage":[16,64,128],"inventory":[\{ qty: 400,"warehouse": "San Jose"\},\{ qty: 200,"warehouse": "San Francisco"\}]\},\
+    \{ "_id" : 4, "name" : "SmartPad", "price" : 699, "releaseDate": ISODate("2020-05-14"),"spec" : \{ "ram" : 8, "screen" : 9.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256,1024],"inventory":[\{ qty: 1200,"warehouse": "San Mateo"\}]\},\
+    \{ "_id" : 5, "name" : "SmartPhone", "price" : 599,"releaseDate": ISODate("2022-09-14"), "spec" : \{ "ram" : 4, "screen" : 5.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256]\}\
+ ])\
+\
+
+\f1\fs26 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec5 db.products.find(\{\},\{ name : 1 , price : 1 \});\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \
+\{\
+  _id: 1,\
+  name: 'xPhone',\
+  price: 799\
+\}\
+\
+\{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899\
+\}\
+\
+\{\
+  _id: 3,\
+  name: 'SmartTablet',\
+  price: 899\
+\}\
+\
+\{\
+  _id: 4,\
+  name: 'SmartPad',\
+  price: 699\
+\}\
+\{\
+  _id: 5,\
+  name: 'SmartPhone',\
+  price: 599\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec4 // in db.products.find(\{\},\{ name : 1 , price : 1 \});  . the first \{\} is  a condition field as is always set to true and is used to give condition\
+// and in find id will always be shown as default untill an unless you put id :0\
+\
+db.products.find(\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec4 \{\},\
+   \{ name: 1, "storage.1": 1, _id: 0 \}\
+)\strokec3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\{\
+  name: 'xPhone',\
+  storage: []\
+\}\
+\
+\{\
+  name: 'xTablet',\
+  storage: []\
+\}\
+\{\
+  name: 'SmartTablet',\
+  storage: []\
+\}\
+\{\
+  name: 'SmartPad',\
+  storage: []\
+\}\
+\{\
+  name: 'SmartPhone',\
+  storage: []\
+\}\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec3 // the above code To print only the second index of the storage array in MongoDB, use\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.find(\
+   \{\},\
+   \{ name: 1, "spec.cpu": 1, _id: 0 \}\
+)\
+\
+\{\
+  name: 'xPhone',\
+  spec: \{\
+    cpu: 2.66\
+  \}\
+\}\
+\{\
+  name: 'xTablet',\
+  spec: \{\
+    cpu: 3.66\
+  \}\
+\}\
+
+\f1\fs26 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec3 // the above code is to To print only the cpu field from the nested spec document:\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\
+
+\f0\fs24 \strokec2 db.products.find(\{_id:1\} ,\{\
+  name:1,\
+    price : 1,\
+    spec:\{screen:1\} \
+\});\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  price: 799,\
+  spec: \{\
+    screen: 6.5\
+  \}\
+\}\
+\
+
+\f0\fs24 \strokec2 // the above code is to add multiple specification so that you can find products with different parameters\
+\
+db.products.find(\{_id:1\} ,\{\
+  name:1,\
+    price : 1,\
+    "spec.screen" :1\
+\});\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  price: 799,\
+  spec: \{\
+    screen: 6.5\
+  \}\
+\}\
+\
+\
+
+\f0\fs24 \strokec2 // he above code is to add one specification so that you can find products with different parameters\
+\
+db.products.find(\
+   \{\},\
+   \{ name: 1, "storage.1": 1, _id: 0 \}\
+)\
+\
+
+\f1\fs26 \strokec3 \{\
+  name: 'xPhone',\
+  storage: []\
+\}\
+\
+\{\
+  name: 'xTablet',\
+  storage: []\
+\}\
+\
+\{\
+  name: 'SmartTablet',\
+  storage: []\
+\}\
+\
+\{\
+  name: 'SmartPad',\
+  storage: []\
+\}\
+\
+// the above code is wrong \
+\
+db.products.drop()\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec6 true\strokec3 \
+\
+\
+\
+db.products.insertMany([\
+    \{ "_id" : 1, "name" : "xPhone", "price" : 799, "releaseDate": ISODate("2011-05-14"), "spec" : \{ "ram" : 4, "screen" : 6.5, "cpu" : 2.66 \},"color":["white","black"],"storage":[64,128,256]\},\
+    \{ "_id" : 2, "name" : "xTablet", "price" : 899, "releaseDate": ISODate("2011-09-01") , "spec" : \{ "ram" : 16, "screen" : 9.5, "cpu" : 3.66 \},"color":["white","black","purple"],"storage":[128,256,512]\},\
+    \{ "_id" : 3, "name" : "SmartTablet", "price" : 899, "releaseDate": ISODate("2015-01-14"), "spec" : \{ "ram" : 12, "screen" : 9.7, "cpu" : 3.66 \},"color":["blue"],"storage":[16,64,128]\},\
+    \{ "_id" : 4, "name" : "SmartPad", "price" : 699, "releaseDate": ISODate("2020-05-14"),"spec" : \{ "ram" : 8, "screen" : 9.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256,1024]\},\
+    \{ "_id" : 5, "name" : "SmartPhone", "price" : 599,"releaseDate": ISODate("2022-09-14"), "spec" : \{ "ram" : 4, "screen" : 9.7, "cpu" : 1.66 \},"color":["white","orange","gold","gray"],"storage":[128,256]\}\
+ ])\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 // the bottom code is for the $eq means equal to operator .\
+\
+db.products.find(\{\
+    color: \{\
+        $eq: "black"\
+    \}\
+\}, \{\
+    name: 1,\
+    color: 1\
+\})\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  color: [\
+    'white',\
+    'black'\
+  ]\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \{\
+  _id: 2,\
+  name: 'xTablet',\
+  color: [\
+    'white',\
+    'black',\
+    'purple'\
+  ]\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.find(\{\
+    price: \{\
+        $eq: 899\
+    \}\
+\}, \{\
+    name: 1,\
+    price: 1\
+\})\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899\
+\}\
+\
+\{\
+  _id: 3,\
+  name: 'SmartTablet',\
+  price: 899\
+\}\
+\
+
+\f0\fs24 \strokec2 db.products.find(\{\
+    "spec.ram": 4\
+\
+\}, \{\
+    name: 1,\
+    "spec.ram": 1\
+\})\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  spec: \{\
+    ram: 4\
+  \}\
+\}\
+\
+\{\
+  _id: 5,\
+  name: 'SmartPhone',\
+  spec: \{\
+    ram: 4\
+  \}\
+\}\
+\
+\
+// now we use these operators \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\fs24 \cf2 \strokec7 Comparison operators:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f2\fs26 \cf2 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $gt
+\f0\fs24 \strokec7  \uc0\u8594  greater than\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $lt
+\f0\fs24 \strokec7  \uc0\u8594  less than\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $gte
+\f0\fs24 \strokec7  \uc0\u8594  greater than or equal\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $lte
+\f0\fs24 \strokec7  \uc0\u8594  less than or equal\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $eq
+\f0\fs24 \strokec7  \uc0\u8594  equal\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec7 $ne
+\f0\fs24 \strokec7  \uc0\u8594  not equal\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf2 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf2 \strokec3 db.products.find(\{\
+    price: \{\
+        $lt: 799\
+    \}\
+\}, \{\
+    name: 1,\
+    price: 1\
+\})\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \
+\{\
+  _id: 4,\
+  name: 'SmartPad',\
+  price: 699\
+\}\
+\{\
+  _id: 5,\
+  name: 'SmartPhone',\
+  price: 599\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.find(\{\
+    "spec.screen": \{\
+        $lt: 7\
+    \}\
+\}, \{\
+    name: 1,\
+    "spec.screen": 1\
+\})\
+\
+
+\f1\fs26 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  spec: \{\
+    screen: 6.5\
+  \}\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \strokec2 db.products.find(\{\
+    storage: \{\
+        $lt: 128\
+    \}\
+\}, \{\
+    name: 1,\
+    storage: 1\
+\})\
+\
+
+\f1\fs26 \strokec3 \{\
+  _id: 1,\
+  name: 'xPhone',\
+  storage: [\
+    64,\
+    128,\
+    256\
+  ]\
+\}\
+\
+\{\
+  _id: 3,\
+  name: 'SmartTablet',\
+  storage: [\
+    16,\
+    64,\
+    128\
+  ]\
+\}\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\b\fs36 \cf2 \strokec7 // find products with price greater than or equal to 800\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf2 \strokec7 \
+db.products.find(\{\
+   price: \{ $gte: 800 \}\
+\})\
+\
+\{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899,\
+  releaseDate: 2011-09-01T00:00:00.000Z,\
+  spec: \{\
+    ram: 16,\
+    screen: 9.5,\
+    cpu: 3.66\
+  \},\
+  color: [\
+    'white',\
+    'black',\
+    'purple'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    512\
+  ]\
+\}\
+\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\b\fs36 \cf2 \strokec7 // find products with RAM greater than or equal to 8\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf2 \strokec7 \
+db.products.find(\{\
+   "spec.ram": \{ $gte: 8 \}\
+\})\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899,\
+  releaseDate: 2011-09-01T00:00:00.000Z,\
+  spec: \{\
+    ram: 16,\
+    screen: 9.5,\
+    cpu: 3.66\
+  \},\
+  color: [\
+    'white',\
+    'black',\
+    'purple'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    512\
+  ]\
+\}\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\b\fs36 \cf2 \strokec7 // find products released on or after 2020\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf2 \strokec7 \
+db.products.find(\{\
+   releaseDate: \{\
+      $gte: ISODate("2020-01-01")\
+   \}\
+\})\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\{\
+  _id: 4,\
+  name: 'SmartPad',\
+  price: 699,\
+  releaseDate: 2020-05-14T00:00:00.000Z,\
+  spec: \{\
+    ram: 8,\
+    screen: 9.7,\
+    cpu: 1.66\
+  \},\
+  color: [\
+    'white',\
+    'orange',\
+    'gold',\
+    'gray'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    1024\
+  ]\
+\}\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\b\fs36 \cf2 \strokec7 // find products with CPU greater than or equal to 3\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf2 \strokec7 \
+db.products.find(\{\
+   "spec.cpu": \{ $gte: 3 \}\
+\})\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec3 \{\
+  _id: 2,\
+  name: 'xTablet',\
+  price: 899,\
+  releaseDate: 2011-09-01T00:00:00.000Z,\
+  spec: \{\
+    ram: 16,\
+    screen: 9.5,\
+    cpu: 3.66\
+  \},\
+  color: [\
+    'white',\
+    'black',\
+    'purple'\
+  ],\
+  storage: [\
+    128,\
+    256,\
+    512\
+  ]\
+\}\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f3\b\fs36 \cf2 \strokec7 // show only name and price\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs26 \cf2 \strokec7 \
+db.products.find(\
+\{\
+   price: \{ $gte: 800 \}\
+\},\
+\{\
+   _id: 0,\
+   name: 1,\
+   price: 1\
+\})\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 \strokec3 \
+\{\
+  name: 'xTablet',\
+  price: 899\
+\}\
+\
+\{\
+  name: 'SmartTablet',\
+  price: 899\
+\}\
+\
+}
