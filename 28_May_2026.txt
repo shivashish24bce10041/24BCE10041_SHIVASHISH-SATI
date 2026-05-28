@@ -1,0 +1,207 @@
+
+
+db. products.find({
+price: 1
+Şexists: true
+$gt: 699
+name: 1 price:
+
+
+Output:
+(" id" : 1, "name" : "xPhone"
+', "price" : 799
+‹ "_id" : 2, "name" : "xTablet"
+", "price" : 899
+{"_id": 3,q"name" : "SmartTablet"
+, "price": 899
+
+
+The $type operator has the following syntax:
+
+
+{ field: { $type: <BSON type> } }
+Code language: CSS (css)
+The $type operator also accepts a list of BSON types like this:
+{ field: { $type: [ <BSON type1> , <BSON type2>, ... ] } }
+Code language: CSS (css)
+
+
+
+db.products.find({
+    price: {
+        $type: "string"
+    }
+}, {
+    name: 1,
+    price: 1
+})
+
+
+{ "_id" : 1, "name" : "xPhone", "price" : "799" }
+{ "_id" : 5, "name" : "SmartPhone", "price" : [ "599", 699 ] }
+
+
+db.products.find({
+    price: {
+        $type: "number"
+    }
+}, {
+    name: 1,
+    price: 1
+})
+
+
+{ "_id" : 2, "name" : "xTablet", "price" : 899 }
+{ "_id" : 3, "name" : "SmartTablet", "price" : NumberLong(899) }
+{ "_id" : 4, "name" : "SmartPad", "price" : [ 599, 699, 799 ] }
+{ "_id" : 5, "name" : "SmartPhone", "price" : [ "599", 699 ] }
+
+
+db.products.find({
+    price: {
+        $type: "array"
+    }
+}, {
+    name: 1,
+    price: 1
+})
+
+
+{ "_id" : 4, "name" : "SmartPad", "price" : [ 599, 699, 799 ] }
+{ "_id" : 5, "name" : "SmartPhone", "price" : [ "599", 699 ] }
+
+
+db.products.find({
+    price: {
+        $type: ["number", "string"]
+    }
+}, {
+    name: 1,
+    price: 1
+})
+
+
+{ "_id" : 1, "name" : "xPhone", "price" : "799" }
+{ "_id" : 2, "name" : "xTablet", "price" : 899 }
+{ "_id" : 3, "name" : "SmartTablet", "price" : NumberLong(899) }
+{ "_id" : 4, "name" : "SmartPad", "price" : [ 599, 699, 799 ] }
+{ "_id" : 5, "name" : "SmartPhone", "price" : [ "599", 699 ] }
+
+
+
+db.products.find({
+    color: {
+        $size: 2
+    }
+}, {
+    name: 1,
+    color: 1
+})
+
+
+{
+  _id: 1,
+  name: 'xPhone',
+  color: [
+    'white',
+    'black'
+  ]
+}
+
+
+db.products.find({
+    $or: [{
+            color: {
+                $size: 1
+            }
+        },
+        {
+            color: {
+                $size: 2
+            }
+        }
+    ]
+}, {
+    name: 1,
+    color: 1
+})
+
+
+{
+  _id: 1,
+  name: 'xPhone',
+  color: [
+    'white',
+    'black'
+  ]
+}
+
+{
+  _id: 3,
+  name: 'SmartTablet',
+  color: [
+    'blue'
+  ]
+}
+
+
+
+db.products.find({
+    'price': {
+        $exists: 1
+    }
+}, {
+    name: 1,
+    price: 1
+}).sort({
+    price: 1
+})
+
+{
+  _id: 7,
+  name: 'xReader',
+  price: null
+}
+
+{
+  _id: 5,
+  name: 'SmartPhone',
+  price: 599
+}
+
+{
+  _id: 4,
+  name: 'SmartPad',
+  price: 699
+}
+
+{
+  _id: 1,
+  name: 'xPhone',
+  price: 799
+}
+{
+  _id: 2,
+  name: 'xTablet',
+  price: 899
+}
+
+{
+  _id: 3,
+  name: 'SmartTablet',
+  price: 899
+}
+
+
+db.products.find({
+    color: {
+        $size: {$gt: 2}
+    }
+}, {
+    name: 1,
+    color: 1
+})
+
+
+
+
