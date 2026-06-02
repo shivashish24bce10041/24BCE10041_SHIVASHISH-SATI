@@ -1,0 +1,196 @@
+
+
+Edited    
+
+
+1. import java.sql.Connection;
+2. import java.sql.PreparedStatement;
+3. import java.sql.ResultSet;
+4. public class CRUD_Test {
+5. 
+6. public static void main(String[] args) {
+7. 	CRUD_Test objTest=new CRUD_Test();
+8.         //insert data
+9. 	objTest.create_data(HTML CSS pages - tag values);
+10. 	objTest.create_data("201", "Arun", "arun@gmail.com");
+11.         //read data
+12. //	objTest.read_data("201");
+13. //        //update data
+14. //	objTest.update_data("2", "22", "jawad2", "jawad2@gmail");
+15. //        //delete data
+16. //	objTest.delete_data("1");
+17. }
+18. 
+19. public void create_data(String sl_no,String name,String email){
+20. 	DB_Connection obj_DB_Connection=new DB_Connection();
+21. 	Connection connection=obj_DB_Connection.get_connection();
+22. 	PreparedStatement ps=null;
+23. 	try {
+24. 		
+25. 		ps=connection.prepareStatement("insert into user(sl_no,name,email) values (?,?,?)");
+26. 		ps.setString(1, sl_no);
+27. 		ps.setString(2, name);
+28. 		ps.setString(3, email);
+29. 		System.out.println(ps);
+30. 		ps.executeUpdate();
+31. 	} catch (Exception e) {
+32. 		System.out.println(e);
+33. 	}
+34. }
+35. 
+36. public void read_data(String sl_no){
+37. 	DB_Connection obj_DB_Connection=new DB_Connection();
+38. 	Connection connection=obj_DB_Connection.get_connection();
+39. 	PreparedStatement ps=null;
+40. 	ResultSet rs=null;
+41. 	try {
+42. 		String query="select * from user where sl_no=?";
+43. 		ps=connection.prepareStatement(query);
+44. 		//ps.setString(1, sl_no);
+45. 		System.out.println(ps);
+46. 		rs=ps.executeQuery();
+47. 		while(rs.next()){
+48. 		System.out.println("Sl no -"+rs.getString("sl_no"));
+49. 		System.out.println("name -"+rs.getString("name"));
+50. 		System.out.println("email -"+rs.getString("email"));
+51. 		System.out.println("---------------");
+52. 		}
+53. 	} catch (Exception e) {
+54. 		System.out.println(e);
+55. 	}
+56. }
+
+
+
+
+-- This Java method retrieves and displays a specific user's data from a database based on the sl_no (serial number) provided.
+
+1.  public void edit_data(String sl_no){
+2. 	DB_Connection obj_DB_Connection=new DB_Connection();
+3. 	Connection connection=obj_DB_Connection.get_connection();
+4. 	PreparedStatement ps=null;
+5. 	ResultSet rs=null;
+6. 	try{
+7. 		String query = "select * from user where sl_no=?";
+8. 		ps = connection.prepareStatement(query);
+9. 		ps.setString(1, sl_no);
+10. 		System.out.println(ps);
+11. 		rs=ps.executeQuery();
+12. 		if(rs.next()){
+13. 			System.out.println("Sl no -"+rs.getString("sl_no"));
+14. 			System.out.println("name -"+rs.getString("name"));
+15. 			System.out.println("email -"+rs.getString("email"));
+16. 			System.out.println("---------------");
+17. 			}
+18. 	}catch (Exception e) {
+19. 		System.out.println(e);
+20.   	}
+21. }
+
+
+
+
+1. select * from user where sl_no=?
+2. Sl no -201
+3. name -Arun
+4. email -arun@gmail.com
+---------------
+
+
+-- This method deletes all records from the student table using the SQL TRUNCATE command.
+
+
+
+1. public void truncate_data() {
+2. 	    DB_Connection obj_DB_Connection = new DB_Connection();
+3. 	    Connection connection = obj_DB_Connection.get_connection();
+4. 	    PreparedStatement ps = null;
+5. 
+6. 	    try {
+7. 	        String query = "truncate table student";
+8. 	        ps = connection.prepareStatement(query);
+9. 
+10. 	        System.out.println(ps);
+11. 
+12.  	        ps.executeUpdate();
+13. 	        System.out.println("All records deleted successfully.");
+14. 
+15. 	    } catch (Exception e) {
+16. 	        System.out.println(e);
+17. 	    }
+18. 	}
+
+
+1. select * from user where sl_no='201'
+2. Sl no -201
+3. name -Arun
+4. email -arun@gmail.com
+---------------
+
+
+
+-- This method modifies the structure of the student table by adding a new column named address.
+
+
+1. public void alter_table() {
+2. 	    DB_Connection obj_DB_Connection = new DB_Connection();
+3. 	    Connection connection = obj_DB_Connection.get_connection();
+4. 	    PreparedStatement ps = null;
+5. 
+6. 	    try {
+7. 	        String query = "alter table student ADD address VARCHAR(20)";
+8. 	        ps = connection.prepareStatement(query);
+9. 
+10. 	        System.out.println(ps);
+11. 
+12. 	        ps.executeUpdate();
+13. 	        System.out.println("Column added successfully.");
+14. 
+15. 	    } catch (Exception e) {
+16. 	        System.out.println(e);
+17. 	    }
+18. 	}
+
+
+
+1. truncate table student
+2. All records deleted successfully.
+
+-- mongo db code and its workinh
+
+1. package mongo;
+2. 
+3. import com.mongodb.client.MongoClient;
+4. import com.mongodb.client.MongoClients;
+5. import com.mongodb.client.MongoDatabase;
+6. 
+7. public class MongoDBConnection {
+8. 
+9.    public static void main(String[] args) {
+10. 
+11.         String connectionString = "mongodb://localhost:27017";
+12. 
+13.         try (MongoClient mongoClient = MongoClients.create(connectionString)) {
+14. 
+15.             MongoDatabase database = mongoClient.getDatabase("testdb");
+16. 
+17.             System.out.println("Connected successfully to MongoDB!");
+18. 
+19.         } catch (Exception e) {
+20.             System.out.println(e);
+21.         }
+22.     }
+23. }
+
+
+
+1. alter table student ADD address VARCHAR(20)
+2. Column added successfully.
+
+
+
+
+
+
+
+
