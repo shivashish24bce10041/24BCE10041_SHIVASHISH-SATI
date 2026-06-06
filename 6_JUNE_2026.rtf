@@ -1,0 +1,1205 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Monaco;\f2\froman\fcharset0 Times-Roman;
+\f3\fswiss\fcharset0 Helvetica;\f4\fmodern\fcharset0 CourierNewPSMT;\f5\fmodern\fcharset0 Courier;
+\f6\froman\fcharset0 Times-Bold;\f7\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red25\green28\blue31;\red67\green67\blue66;\red0\green0\blue0;
+\red212\green82\blue94;\red196\green134\blue80;\red157\green165\blue178;\red25\green28\blue31;\red67\green67\blue66;
+\red213\green83\blue94;\red196\green134\blue80;\red157\green165\blue178;\red135\green184\blue99;\red249\green252\blue247;
+\red25\green28\blue31;\red67\green67\blue66;\red213\green83\blue95;\red196\green135\blue81;\red157\green164\blue178;
+\red135\green184\blue100;\red43\green50\blue64;\red74\green171\blue183;\red43\green50\blue64;\red25\green28\blue31;
+\red19\green116\blue158;\red156\green164\blue178;\red197\green135\blue82;\red67\green67\blue66;\red135\green185\blue100;
+\red213\green84\blue96;\red42\green50\blue64;\red249\green251\blue247;}
+{\*\expandedcolortbl;;\cssrgb\c13145\c14733\c16171;\cssrgb\c33227\c33226\c32895;\cssrgb\c0\c0\c0;
+\cssrgb\c87264\c41502\c44187;\cssrgb\c81466\c59626\c38416;\cssrgb\c67905\c70698\c75123;\cssrgb\c13119\c14705\c16160;\cssrgb\c33192\c33191\c32901;
+\cssrgb\c87339\c41611\c44402;\cssrgb\c81531\c59724\c38617;\cssrgb\c67801\c70588\c75096;\cssrgb\c59330\c76122\c46435;\cssrgb\c98099\c98883\c97506;
+\cssrgb\c13094\c14678\c16149;\cssrgb\c33157\c33156\c32908;\cssrgb\c87413\c41720\c44616;\cssrgb\c81595\c59822\c38816;\cssrgb\c67696\c70477\c75070;
+\cssrgb\c59371\c76174\c46582;\cssrgb\c21959\c25929\c32042;\cssrgb\c34489\c72339\c76790;\cssrgb\c21960\c25929\c32041;\cssrgb\c13043\c14622\c16126;
+\cssrgb\c4203\c53035\c68275;\cssrgb\c67485\c70254\c75016;\cssrgb\c81719\c60015\c39214;\cssrgb\c33086\c33085\c32920;\cssrgb\c59452\c76275\c46874;
+\cssrgb\c87559\c41934\c45041;\cssrgb\c21829\c25783\c31950;\cssrgb\c97996\c98779\c97526;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+{\info
+{\author SHIVASHISH SATI}
+{\*\company VIT BHOAPL}
+{\*\copyright @SATI}}\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh18460\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \
+\
+
+\fs36 // INDEXING 
+\fs26 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+use the getIndexes() method with the following syntax:\
+db.collection.getIndexes()\
+\pard\pardeftab720\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+In this syntax, the collection is the name of the collection that you want to get the indexes. For example, the following shows the indexes of the movies collection in the mflix database:\
+\pard\pardeftab720\partightenfactor0
+\cf0 db.sales.getIndexes()\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 Output:\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 [ \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \} ]\
+\
+\
+\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+db.sales.insertMany([\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 1, "item" : "Americanos", "price" : 5, "size": "Short", "quantity" : 22, "date" : ISODate("2022-01-15T08:00:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 2, "item" : "Cappuccino", "price" : 6, "size": "Short","quantity" : 12, "date" : ISODate("2022-01-16T09:00:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 3, "item" : "Lattes", "price" : 15, "size": "Grande","quantity" : 25, "date" : ISODate("2022-01-16T09:05:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 4, "item" : "Mochas", "price" : 25,"size": "Tall", "quantity" : 11, "date" : ISODate("2022-02-17T08:00:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 5, "item" : "Americanos", "price" : 10, "size": "Grande","quantity" : 12, "date" : ISODate("2022-02-18T21:06:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 6, "item" : "Cappuccino", "price" : 7, "size": "Tall","quantity" : 20, "date" : ISODate("2022-02-20T10:07:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 7, "item" : "Lattes", "price" : 25,"size": "Tall", "quantity" : 30, "date" : ISODate("2022-02-21T10:08:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 8, "item" : "Americanos", "price" : 10, "size": "Grande","quantity" : 21, "date" : ISODate("2022-02-22T14:09:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 9, "item" : "Cappuccino", "price" : 10, "size": "Grande","quantity" : 17, "date" : ISODate("2022-02-23T14:09:00Z") \},\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+\{ "_id" : 10, "item" : "Americanos", "price" : 8, "size": "Tall","quantity" : 15, "date" : ISODate("2022-02-25T14:09:00Z")\}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	
+\f1 \uc0\u8259 
+\f0 	}\expnd0\expndtw0\kerning0
+]);\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf0 \
+\
+//  now to see the indexing \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs28 \cf0 db.books.getIndexes()\
+\
+output :-\
+\
+[ \{ v: 2, key: \{ _id: 1 \}, name: '_id_' \} ]\
+\
+\
+// code to find we us \
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf0 db.books.find()\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf0 \
+\
+output :- \
+\
+ \{\
+  _id: ObjectId('6a1597e8fd05f1528a6a7d69')\
+\}\
+\{\
+  _id: ObjectId('6a159861fd05f1528a6a7d6a'),\
+  title: 'MongoDB insertOne',\
+  isbn: '0-7617-6154-3'\
+\}\
+\{\
+  _id: ObjectId('6a1598aefd05f1528a6a7d6b'),\
+  title: 'NoSQL Distilled',\
+  isbn: '0-4696-7030-4'\
+\}\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 \{\
+  _id: ObjectId('6a1598aefd05f1528a6a7d6c'),\
+  title: 'NoSQL in 7 Days',\
+  isbn: '0-4086-6859-8'\
+\}\
+\{\
+  _id: ObjectId('6a1598aefd05f1528a6a7d6d'),\
+  title: 'NoSQL Database',\
+  isbn: '0-2504-6932-4'\
+\}\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+
+\fs36 \
+// UNIQUE INDEX \
+
+\fs24 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 To create a unique index, you use the 
+\f4 createIndex()
+\f3  method with the option 
+\f4 \{unique: true\}
+\f3  like this:
+\f2\fs24 \
+
+\f5\fs32 		db.collection.createIndex(\{ field: 1\}, \{unique: true\});
+\f2\fs24 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs34\fsmilli17333 \cf0 \'97  Create a unique index for a field\
+
+\f6\b\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \'97 First, inserts two documents into the 
+\f4 users
+\f3  collection:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.insertMany([
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "john@test.com", name: "john"\},
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "jane@test.com", name: "jane"\},
+\f2\fs24 \
+
+\f5\fs32 		]);
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 Second, create a unique index for the email field:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.createIndex(\{email:1\},\{unique:true\});
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 Third, attempt to insert a new document with the email that already exists:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.insertOne(
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "john@test.com", name: "johny"\}
+\f2\fs24 \
+
+\f5\fs32 		);
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 MongoDB returned the following error:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		MongoServerError: E11000 duplicate key error collection: mflix.users index: email_1 dup key: \{ email: "john@test.com" \}
+\f2\fs24 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs34\fsmilli17333 \cf0 2) Create a unique index for collection with duplicate data\
+
+\f6\b\fs28 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \'97 First, drop the 
+\f4 users
+\f3  collection and recreate it by inserting three entries:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.drop()
+\f2\fs24 \
+\
+
+\f5\fs32 		db.users.insertMany([
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "john@test.com", name: "john"\},
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "john@test.com", name: "johny"\},
+\f2\fs24 \
+
+\f5\fs32 		\'a0\'a0\'a0\{ email:\'a0 "jane@test.com", name: "jane"\},
+\f2\fs24 \
+
+\f5\fs32 		])
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 Second, attempt to create a unique index for the email field of the 
+\f4 users
+\f3  collection:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.createIndex(\{email: 1\},\{unique:true\})
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 MongoDB returned the following error:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 MongoServerError: Index build failed: 95f78956-d5d0-4882-bfe0-2d856df18c61: Collection mflix.users ( 6da472db-2884-4608-98b6-95a003b4f29c ) :: caused by :: E11000 duplicate key error collection: mflix.users index: email_1 dup key: \{ email: "john@test.com" \}
+\f2\fs24 \
+\
+\
+
+\f3\fs32 \'97 First, delete the duplicate user:
+\f2\fs24 \
+
+\f5\fs32 		db.users.deleteOne(\{name:'johny', email: 'john@test.com'\});
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 Output:
+\f2\fs24 \
+
+\f5\fs32 		\{ acknowledged: true, deletedCount: 1 \}
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 Then, create a unique index for the email field:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.users.createIndex(\{email: 1\},\{unique:true\})
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 Output:
+\f2\fs24 \
+
+\f5\fs32 		email_1
+\f2\fs24 \
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs45\fsmilli22667 \cf0 // Unique compound index\
+\
+
+\f6\b\fs36 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 When a unique index contains more than one field, it is called a unique compound index. A unique compound index ensures the uniqueness of the combination of fields.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f3\fs32 \cf0 For example, if you create a unique compound index for the field1 and field2, the following values are unique:
+\f2\fs24 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth5540\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 field1
+\f2\b0\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 field2
+\f2\b0\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 Combination
+\f2\b0\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth5540\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (1,1)
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth5540\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (1,2)
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth5540\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (2,1)
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2740\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth5540\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (2,2)
+\f2\fs24 \cell \lastrow\row
+\pard\pardeftab720\sa320\partightenfactor0
+
+\f3\fs32 \cf0 However, the following values are duplicate:
+\f2\fs24 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth6100\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 field1
+\f2\b0\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 field2
+\f2\b0\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f7\b\fs32 \cf0 Combination
+\f2\b0\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth6100\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (1,1)
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth6100\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (1,1) -> duplicate
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth6100\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (2,1)
+\f2\fs24 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2460\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth6100\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf4 \clbrdrl\brdrs\brdrw20\brdrcf4 \clbrdrb\brdrs\brdrw20\brdrcf4 \clbrdrr\brdrs\brdrw20\brdrcf4 \clpadt160 \clpadl160 \clpadb160 \clpadr160 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 2
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 1
+\f2\fs24 \cell 
+\pard\intbl\itap1\pardeftab720\sa773\partightenfactor0
+
+\f3\fs32 \cf0 (2,1) -> duplicate
+\f2\fs24 \cell \lastrow\row
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 To create a unique compound index, you specify fields in the index specification like this:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.collection.createIndex(\{field1: 1, field2: 1\}, \{unique: true\});
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 // using the unique compound index.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 First, create a 
+\f4 locations
+\f3  collection by adding one location to it:
+\f2\fs24 \
+
+\f5\fs32 		db.locations.insertOne(\{
+\f2\fs24 \
+
+\f5\fs32 			address: "Downtown San Jose, CA, USA",
+\f2\fs24 \
+
+\f5\fs32 			lat: 37.335480,
+\f2\fs24 \
+
+\f5\fs32 			long: -121.893028
+\f2\fs24 \
+
+\f5\fs32 		\})
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 Second, create a unique compound index for the 
+\f4 lat
+\f3  and 
+\f4 long
+\f3  fields of the 
+\f4 locations
+\f3  collection:
+\f2\fs24 \
+
+\f5\fs32 		db.locations.createIndex(\{
+\f2\fs24 \
+
+\f5\fs32 			lat: 1,
+\f2\fs24 \
+
+\f5\fs32 			long: 1
+\f2\fs24 \
+
+\f5\fs32 		\},\{ unique: true \});
+\f2\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 Output:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		lat_1_long_1\
+	\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \'97 Third, insert a location with the 
+\f4 lat
+\f3  value that already exists:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 		db.locations.insertOne(\{
+\f2\fs24 \
+
+\f5\fs32 			address: "Dev Bootcamp, San Jose, CA, USA",
+\f2\fs24 \
+
+\f5\fs32 			lat: 37.335480,
+\f2\fs24 \
+
+\f5\fs32 			long: -122.893028
+\f2\fs24 \
+
+\f5\fs32 		\})
+\f2\fs24 \
+		\
+\
+\
+ \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+
+\fs48 //
+\f3 MongoDB compound indexes\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f6\b\fs36 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \outl0\strokewidth0 \strokec24 \'97 To create a compound index, you use the {\field{\*\fldinst{HYPERLINK "https://mongodbtutorial.org/mongodb-indexes/mongodb-createindex/"}}{\fldrslt 
+\f4 \strokec25 createIndex()}} method with the following syntax:\
+\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.collection.createIndex(\{
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\'a0\'a0\strokec27 field1\strokec26 : type,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\'a0\'a0\strokec27 field2\strokec26 : type,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\'a0\'a0\strokec27 field3\strokec26 : type,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\});
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 	\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \outl0\strokewidth0 \strokec24 \'97 First, create a compound index on the 
+\f4 \strokec28 title
+\f3 \strokec24  and 
+\f4 \strokec28 year
+\f3 \strokec24  fields of the 
+\f4 \strokec28 movies
+\f3 \strokec24  collection:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.movies.createIndex(\{ \strokec27 title\strokec26 : \strokec27 1\strokec26 , \strokec27 year\strokec26 : \strokec27 1\strokec26  \})\
+
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		title_1_year_1
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+
+\f3\fs32 \strokec24 \'97 Second, find the movies whose titles contain the word 
+\f4 \strokec28 valley
+\f3 \strokec24  and were released in the year 2014:\
+\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.movies.find(\{\strokec27 title\strokec26 : \strokec29 /valley/gi\strokec26 , \strokec27 year\strokec26 : \strokec27 2014\strokec26 \}).explain(\strokec29 'executionStats'\strokec26 );
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Output:
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0inputStage: \{
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 stage\strokec26 : \strokec29 'IXSCAN'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 filter\strokec26 : \{ \strokec27 title\strokec26 : \{ \strokec29 '$regex'\strokec26 : \strokec29 'valley'\strokec26 , \strokec29 '$options'\strokec26 : \strokec29 'is'\strokec26  \} \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 nReturned\strokec26 : \strokec27 3\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0indexName: \strokec29 'title_1_year_1'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \
+\
+
+\f2\fs24 \strokec4 \
+
+\f3\fs32 \strokec24 \'97 Third, find the movies whose titles contain the word 
+\f4 \strokec28 valley
+\f3 \strokec24 :\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.movies.find(\{\strokec27 title\strokec26 :\strokec29 /valley/gi\strokec26 \}).explain(\strokec29 'executionStats'\strokec26 );
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+
+\f3\fs32 \strokec24 Output:
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0inputStage: \{
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 stage\strokec26 : \strokec29 'IXSCAN'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 filter\strokec26 : \{ \strokec27 title\strokec26 : \{ \strokec29 '$regex'\strokec26 : \strokec29 'valley'\strokec26 , \strokec29 '$options'\strokec26 : \strokec29 'is'\strokec26  \} \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 nReturned\strokec26 : \strokec27 21\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0...j
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\strokec27 indexName\strokec26 : \strokec29 'title_1_year_1'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Finally, find the movies that were released in the year 2014:\
+\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.movies.find(\{\strokec27 year\strokec26 : \strokec27 2014\strokec26 \}).explain(\strokec29 'executionStats'\strokec26 );
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \outl0\strokewidth0 \strokec24 \'97 Output:
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0executionStages: \{
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\strokec27 stage\strokec26 : \strokec29 'COLLSCAN'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\strokec27 filter\strokec26 : \{ \strokec27 year\strokec26 : \{ \strokec29 '$eq'\strokec26 : \strokec27 2014\strokec26  \} \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 \'a0\'a0\'a0\'a0\'a0\'a0\strokec27 nReturned\strokec26 : \strokec27 1147\strokec26 ,
+\f2\fs24 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97  \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+\
+
+\fs48 // Dorp Index 
+\fs24 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \outl0\strokewidth0 \strokec24 \'97 To drop an index from a collection, you use the 
+\f4 \strokec28 db.collection.dropIndex()
+\f3 \strokec24  method:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 db\strokec27 .collection.dropIndex\strokec26 (\strokec30 index\strokec26 )
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f6\b\fs36 \cf0 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \strokec24 \'97 Dropping one or more indexes from a collection.\
+\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs34\fsmilli17333 \cf0 \strokec31 1) Drop an index example\
+
+\f6\b\fs28 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \strokec24 \'97 First, {\field{\*\fldinst{HYPERLINK "https://mongodbtutorial.org/mongodb-indexes/mongodb-createindex/"}}{\fldrslt \strokec25 create a new index}} for the 
+\f4 \strokec28 year
+\f3 \strokec24  field in the 
+\f4 \strokec28 movies
+\f3 \strokec24  collection:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.createIndex\strokec26 (\{\strokec29 year\strokec26 : \strokec27 1\strokec26 \})
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+
+\f3\fs32 \strokec24 Output:
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		year_1\
+
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Second, show all the indexes of the 
+\f4 \strokec28 movies
+\f3 \strokec24  collection by using the 
+\f4 \strokec28 getIndexes()
+\f3 \strokec24  method:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.getIndexes\strokec26 ()
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+
+\f3\fs32 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		[
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 _id\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 '_id_'\strokec26  \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 year\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 'year_1'\strokec26  \}
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		]	
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Third, drop the 
+\f4 \strokec28 year_1
+\f3 \strokec24  index using the 
+\f4 \strokec28 dropIndex()
+\f3 \strokec24  method:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		db.movies.dropIndex(\strokec29 'year_1'\strokec26 )
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\{ \strokec29 nIndexesWas\strokec26 : \strokec27 2\strokec26 , ok: \strokec27 1\strokec26  \}
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4   
+\f3\fs32 \strokec24 The output shows that one index has been dropped.\
+
+\f2\fs24 \strokec4 \
+
+\f3\fs32 \strokec24 \'97 Finally, verify the index deletion using the 
+\f4 \strokec28 getIndexes()
+\f3 \strokec24  method:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.getIndexes\strokec26 ()
+\f2\fs24 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \strokec24 \'97 Output:
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec27 		[ \{ v: 2, key: \{ _id: 1 \}, name: \strokec29 '_id_'\strokec27  \} ]
+\f2\fs24 \strokec4 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs34\fsmilli17333 \cf0 \strokec31 2) Drop an index by the index specification\
+
+\f6\b\fs28 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \strokec24 \'97 First, create an index for runtime field in the movies collection:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.createIndex\strokec26 (\{\strokec29 runtime\strokec26 : -\strokec27 1\strokec26 \})\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Second, list the indexes of the movies collection:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.getIndexes\strokec26 ()
+\f2\fs24 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		[
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 _id\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 '_id_'\strokec26  \},
+\f2\fs24 \strokec4 \
+		
+\f5\fs32 \strokec26 \{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 runtime\strokec26 : \strokec27 -1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 'runtime_-1'\strokec26  \}
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		]
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Third, drop the index 
+\f4 \strokec28 runtime_-1
+\f3 \strokec24  but use the index specification instead of the index name:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.dropIndex\strokec26 (\{\strokec29 runtime\strokec26 : -\strokec27 1\strokec26 \});\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\{ \strokec29 nIndexesWas\strokec26 : \strokec27 2\strokec26 , ok: \strokec27 1\strokec26  \}
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs25\fsmilli12667 \cf0 \strokec24 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs34\fsmilli17333 \cf0 \strokec31 3) Drop all non-_id indexes example\
+
+\f6\b\fs28 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs32 \cf0 \strokec24 \'97 First, create two indexes for the year and runtime fields of the movies collection:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.createIndex\strokec26 (\{\strokec29 year\strokec26 : \strokec27 1\strokec26 \})
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec30 		db\strokec27 .movies.createIndex\strokec26 (\{\strokec29 runtime\strokec26 : \strokec27 1\strokec26 \})\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Second, show the indexes of the movies collection:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.getIndexes\strokec26 ()\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		[
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 _id\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 '_id_'\strokec26  \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 year\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 'year_1'\strokec26  \},
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\{ \strokec27 v\strokec26 : \strokec27 2\strokec26 , \strokec27 key\strokec26 : \{ \strokec27 runtime\strokec26 : \strokec27 1\strokec26  \}, \strokec27 name\strokec26 : \strokec29 'runtime_1'\strokec26  \}
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		]
+\f2\fs24 \strokec4 \
+\
+
+\f3\fs32 \strokec24 \'97 Third, drop all non-_id indexes of movies collection using the 
+\f4 \strokec28 dropIndexes()
+\f3 \strokec24  method:\
+
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\fs32 \cf0 \strokec30 		db\strokec27 .movies.dropIndexes\strokec26 ()
+\f2\fs24 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs32 \cf0 \strokec24 \'97 Output:\
+
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\{
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0\strokec29 nIndexesWas\strokec26 : \strokec27 3\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0msg: \strokec29 'non-_id indexes dropped for collection'\strokec26 ,
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\'a0\'a0ok: \strokec27 1
+\f2\fs24 \strokec4 \
+
+\f5\fs32 \strokec26 		\}
+\f2\fs24 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \outl0\strokewidth0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \
+\
+\pard\tx720\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+}
