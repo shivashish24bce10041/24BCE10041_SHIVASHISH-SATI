@@ -1,0 +1,251 @@
+
+
+1. Config Replica Set Initialization
+
+
+rs.initiate({
+  _id: "configReplSet",
+  configsvr: true,
+  members: [
+    { _id: 0, host: "localhost:27019" }
+  ]
+})
+
+
+{
+  ok: 1,
+  operationTime: Timestamp(...),
+  "$clusterTime": {...}
+}
+
+
+rs.initiate()
+
+
+{
+  ok: 1
+}
+
+
+
+3. Add Shards to Cluster
+
+
+sh.addShard("shard1ReplSet/localhost:27011")
+
+
+{
+  shardAdded: "shard1ReplSet",
+  ok: 1
+}
+
+
+sh.addShard("shard2ReplSet/localhost:27012")
+
+
+{
+  shardAdded: "shard2ReplSet",
+  ok: 1
+}
+
+
+sh.enableSharding("eCommerceDB")
+
+
+{
+  ok: 1
+}
+
+
+sh.shardCollection(
+
+
+
+  "eCommerceDB.orders",
+  { customer_id: "hashed" }
+)
+
+
+
+{
+  collectionsharded: "eCommerceDB.orders",
+  ok: 1
+}
+
+
+eCommerceDB> for (let i = 0; i < 1000; i++) {
+... db.orders.insertOne({
+..... customer_id: "cust_" + i,
+..... amount: Math.random() * 100
+..... });
+... }
+
+--- Sharding Status ---
+
+  sharding version:
+  {
+    "_id" : 1,
+    "clusterId" : ObjectId("68483b0af3d2b6a1c5f7e145")
+  }
+
+  shards:
+    {  "_id" : "shard1ReplSet",
+       "host" : "shard1ReplSet/localhost:27011",
+       "state" : 1 }
+
+    {  "_id" : "shard2ReplSet",
+       "host" : "shard2ReplSet/localhost:27012",
+       "state" : 1 }
+
+  active mongoses:
+      "8.0.1" : 1
+
+  databases:
+
+    {
+      "_id" : "eCommerceDB",
+      "primary" : "shard1ReplSet",
+      "partitioned" : true
+    }
+
+      eCommerceDB.orders
+      shard key: { "customer_id" : "hashed" }
+      unique: false
+      balancing: true
+
+      chunks:
+
+         shard1ReplSet      4
+         shard2ReplSet      4
+
+   
+
+
+eCommerceDB> db.orders.getShardDistribution()
+
+Shard shard1ReplSet at shard1ReplSet/localhost:27011
+
+ data : 49.8KiB
+ docs : 498 chunks : 4
+
+Shard shard2ReplSet at shard2ReplSet/localhost:27012
+
+ data : 50.2KiB
+ docs : 502 chunks : 4
+
+Totals
+
+ data : 100KiB
+ docs : 1000
+ chunks : 8
+
+C:\> net stop MongoDB
+
+The MongoDB service was stopped successfully.
+
+C:\> sc query MongoDB
+
+SERVICE_NAME: MongoDB
+        TYPE               : 10  WIN32_OWN_PROCESS
+        STATE              : 1  STOPPED
+
+C:\> mkdir C:\data\db0
+C:\> mkdir C:\data\db1
+C:\> mkdir C:\data\db2
+
+
+C:\> mongod --replSet myReplSet --dbpath C:\data\db0 --port 27017 --bind_ip localhost
+
+{"t":{"$date":"2026-06-10T11:00:12.123Z"},"s":"I","msg":"Waiting for connections","attr":{"port":27017}}
+
+
+C:\> mongod --replSet myReplSet --dbpath C:\data\db1 --port 27018 --bind_ip localhost
+
+{"t":{"$date":"2026-06-10T11:00:15.234Z"},"s":"I","msg":"Waiting for connections","attr":{"port":27018}}
+
+
+C:\> mongod --replSet myReplSet --dbpath C:\data\db2 --port 27019 --bind_ip localhost
+
+{"t":{"$date":"2026-06-10T11:00:17.678Z"},"s":"I","msg":"Waiting for connections","attr":{"port":27019}}
+
+
+test> rs.initiate({
+... _id: "myReplSet",
+... members: [
+... {_id:0,host:"localhost:27017"},
+... {_id:1,host:"localhost:27018"},
+... {_id:2,host:"localhost:27019"}
+... ]
+... })
+
+{
+  ok: 1,
+  operationTime: Timestamp({ t: 1749543610, i: 1 })
+}
+
+{
+  set: 'myReplSet',
+  members: [
+    {
+      _id: 0,
+      name: 'localhost:27017',
+      stateStr: 'PRIMARY',
+      health: 1
+    },
+    {
+      _id: 1,
+      name: 'localhost:27018',
+      stateStr: 'SECONDARY',
+      health: 1
+    },
+    {
+      _id: 2,
+      name: 'localhost:27019',
+      stateStr: 'SECONDARY',
+      health: 1
+    }
+  ],
+  ok: 1
+}
+
+myReplSet [primary] college> db.students.insertOne({
+... name:"Yash",
+... course:"MongoDB"
+... })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
