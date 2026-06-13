@@ -1,0 +1,119 @@
+# Title                                                                                                  									BY
+
+PharmaCore DB – Pharmaceutical R&D Pipeline Management System                             									     ~ SHIVASHISH SATI
+
+
+# Description
+
+PharmaCore DB is a MongoDB-based REST API designed to manage the pharmaceutical research and drug development lifecycle. The system tracks molecules, scientists, research
+teams, clinical trial phases, funding companies, funding grants, regulatory bodies, and adverse events.
+
+The project is built using FastAPI and MongoDB and demonstrates CRUD operations, REST API development, database connectivity, and relationship mapping (One-to-One, One-
+to-Many, Many-to-One, and Many-to-Many).
+
+
+# Tools & Technologies
+
++----------------------+-------------------------------+
+| Tool                 | Purpose                       |
++----------------------+-------------------------------+
+| Python               | Backend Programming Language  |
+| FastAPI              | REST API Framework            |
+| MongoDB              | NoSQL Database                |
+| PyMongo              | MongoDB Driver for Python     |
+| Uvicorn              | ASGI Server                   |
+| Pydantic             | Data Validation               |
+| Swagger UI           | API Testing & Documentation   |
+| Mongo Shell(mongosh) | Database Management           |
++----------------------+-------------------------------+
+
+
+# Versions
+
+Run these commands to get the exact versions:
+
+1. python3  --  Python 3.12.7
+2. fastapi  --  Version: 0.109.0
+3. pymongo  --  Version: 4.17.0
+4. pydantic --  Version: 2.13.4
+5. uvicorn  --  Version: 0.27.0
+6. mongod   --  Version: v8.3.3
+7. mongosh  --  Version: 2.8.3
+
+
+# REST API Modules
+
+1. Molecule Management                 2. Scientist Management
+
+Operations:                            Operations:
+
+POST   /molecule                       POST   /scientist
+GET    /molecules                      GET    /scientists
+GET    /molecule/{id}                  PUT    /scientist/{id}
+PUT    /molecule/{id}                  DELETE /scientist/{id}
+DELETE /molecule/{id}
+
+Purpose:                               Purpose:
+
+Create Molecules                       Manage Scientist Information
+View Molecules
+Update Molecules
+Delete Molecules
+
+
+3. Research Team Management            4. Trial Phase Management
+
+Operations:                            Operations:
+
+POST   /team                           POST   /trial-phase
+GET    /teams                          GET    /trial-phases
+PUT    /team/{id}                      PUT    /trial-phase/{id}
+DELETE /team/{id}                      DELETE /trial-phase/{id}
+
+Purpose:                               Purpose:
+
+Manage Research Teams                  Manage Clinical Trial Stages
+Assign Lead Scientists
+
+
+5. Funding Company Management          6. Funding Grant Management
+
+Operations:                            Operations:
+
+POST   /funding-company                POST   /grant
+GET    /funding-companies              GET    /grants
+PUT    /funding-company/{id}           PUT    /grant/{id}
+DELETE /funding-company/{id}           DELETE /grant/{id}
+
+Purpose:                               Purpose:
+
+Manage Funding Organizations           Manage Research Funding
+
+
+7. Regulatory Body Management          8. Adverse Event Management
+
+Operations:                            Operations:
+
+POST   /regulatory-body                POST   /adverse-event
+GET    /regulatory-bodies              GET    /adverse-events
+PUT    /regulatory-body/{id}           PUT    /adverse-event/{id}
+DELETE /regulatory-body/{id}           DELETE /adverse-event/{id}
+
+Purpose:                               Purpose:
+
+Manage Drug Approval Authorities       Track Drug Side Effects and Safety Issues
+
+
+# Relationship Mapping
+
+One-to-One
+Research Team ↔ Lead Scientist
+
+One-to-Many
+Molecule → Trial Phases
+
+Many-to-One
+Funding Grants → Funding Company
+
+Many-to-Many
+Research Teams ↔ Molecules
